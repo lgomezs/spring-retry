@@ -61,20 +61,11 @@
 			<artifactId>lombok</artifactId>
 		</dependency>
 
-		<!-- JSR -->
-		<dependency>
-			<groupId>javax.annotation</groupId>
-			<artifactId>jsr250-api</artifactId>
-			<version>1.0</version>
-			<scope>compile</scope>
-		</dependency>
-
 		<dependency>
 			<groupId>org.mockito</groupId>
 			<artifactId>mockito-all</artifactId>
 			<scope>test</scope>
 		</dependency>
-
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>

@@ -29,6 +29,9 @@ public class RetryTemplateExampleService {
                 log.info("Init doWithRetry");
                 return exampleService.sendMail(email);
             }
+        },context -> {
+            log.error(" ->>>>>>> recovering message {} : " ,String.format("Retry Recovery - %s", context.getLastThrowable().getMessage()));
+            return null;
         });
     }
 

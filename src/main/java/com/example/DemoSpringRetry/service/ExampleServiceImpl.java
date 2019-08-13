@@ -15,7 +15,7 @@ public class ExampleServiceImpl implements  ExampleService{
 
         if(times<4){
             times++;
-           throw  new RuntimeException("Retrying email sending");
+            throw  new RuntimeException("Error retrying email sending " );
         }
 
         log.info("Retrying send email");

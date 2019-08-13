@@ -1,6 +1,6 @@
 package com.example.DemoSpringRetry;
 
-import com.example.DemoSpringRetry.service.ExampleService;
+import com.example.DemoSpringRetry.service.RetryTemplateExampleService;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Assert;
 import org.junit.Test;
@@ -15,18 +15,13 @@ import org.springframework.test.context.junit4.SpringRunner;
 public class RetryExampleServiceTest {
 
     @Autowired
-    private ExampleService exampleService;
+    private RetryTemplateExampleService retryTemplateExampleService;
 
 
     @Test
-    public void retryRecoveryTest(){
-        log.info("Inicio retryRecoveryTest");
-        try {
-            String result= exampleService.sendMail("! Hola a todos");
-            Assert.assertEquals("OK", result);
-        } catch (Exception e) {
-            log.error("Error retryRecoveryTest , " , e.getMessage());
-        }
+    public void retryExample(){
+        String resul= retryTemplateExampleService.sendEmail("!Hola");
+        Assert.assertEquals("OK",resul);
     }
 
 }
